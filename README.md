@@ -43,7 +43,7 @@ Complete-ASIC-Flow-of-PIT-Programmable-Interrupt-Timer/
 ```
 
 ## Dependencies
-### This project requires the following tools and libraries:
+### This project requires the following tools:
 
 - **Verilog Simulator:** ModelSim, VCS, or equivalent
 - **Synthesis Tool:** Synopsys Design Compiler
