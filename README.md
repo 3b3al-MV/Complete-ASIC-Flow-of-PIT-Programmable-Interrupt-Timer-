@@ -52,4 +52,5 @@ Complete-ASIC-Flow-of-PIT-Programmable-Interrupt-Timer/
 - **Timing Analysis Tool:** Synopsys PrimeTime
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for more details.
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
