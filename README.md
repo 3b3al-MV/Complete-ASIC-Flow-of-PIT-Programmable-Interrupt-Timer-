@@ -2,20 +2,17 @@
 
 ## Overview
 
-Welcome to the **Complete-ASIC-Flow-of-PIT-Programmable-Interrupt-Timer** repository! This project encompasses the entire ASIC design flow for a Programmable Interrupt Timer (PIT). It includes RTL design, synthesis, simulation, verification, and physical design steps necessary to implement a fully functional PIT module in hardware.
+This project encompasses the entire ASIC design flow for a Programmable Interrupt Timer (PIT) using SAED90nm technology and Synopsys tools. It includes RTL design, synthesis, simulation, verification, and physical design steps necessary to implement a fully functional PIT module in hardware.
 
 ## Table of Contents
 
 1. [Introduction](#introduction)
 2. [Features](#features)
 3. [Directory Structure](#directory-structure)
-4. [Getting Started](#getting-started)
-5. [Dependencies](#dependencies)
-6. [Usage](#usage)
-7. [Contributing](#contributing)
-8. [License](#license)
-9. [Acknowledgements](#acknowledgements)
+4. [Dependencies](#dependencies)
+5. [License](#license)
 
+   
 ## Introduction
 
 The Programmable Interrupt Timer (PIT) is a critical component in many embedded systems, providing precise timing and interrupt capabilities. This repository demonstrates a complete Application-Specific Integrated Circuit (ASIC) design flow for a PIT, from high-level RTL design to the final physical layout.
@@ -23,39 +20,36 @@ The Programmable Interrupt Timer (PIT) is a critical component in many embedded 
 ## Features
 
 - **RTL Design:** Verilog-based RTL implementation of the PIT.
-- **Synthesis:** Conversion of RTL code to gate-level representation.
-- **Simulation:** Functional and timing simulations to verify correctness.
-- **Verification:** Comprehensive testbenches and verification environment.
-- **Physical Design:** Floorplanning, placement, routing, and sign-off checks.
-- **Documentation:** Detailed documentation and tutorials.
+- **Synthesis:** Conversion of RTL code to gate-level representation using Synopsys Design Compiler (DC).
+- **Formal Verification:** Verification using Synopsys Formality.
+- **Physical Design:** Floorplanning, placement, routing, and sign-off checks using Synopsys ICC II.
+- **Timing Analysis:** Detailed timing analysis using Synopsys PrimeTime.
 
 ## Directory Structure
 
 ```plaintext
 Complete-ASIC-Flow-of-PIT-Programmable-Interrupt-Timer/
 │
-├── docs/                   # Documentation and tutorials
-│   ├── spec/               # Specifications and design documents
-│   └── reports/            # Reports from various design stages
-│
-├── rtl/                    # RTL design files
-│   ├── pit.v               # Verilog code for PIT
-│   └── ...                 # Other RTL files
-│
-├── sim/                    # Simulation files and testbenches
-│   ├── testbench.v         # Testbench for PIT
-│   └── ...                 # Other simulation files
-│
-├── synth/                  # Synthesis scripts and results
-│   ├── syn_script.tcl      # Synthesis script
-│   └── ...                 # Other synthesis-related files
-│
-├── phy/                    # Physical design files
-│   ├── floorplan.def       # Floorplanning files
-│   └── ...                 # Placement, routing, and sign-off files
-│
-├── scripts/                # Utility scripts
-│   ├── setup_env.sh        # Environment setup script
-│   └── ...                 # Other utility scripts
+├── ASIC Project/           # Master folder for the project
+│   ├── Syn/                # Synthesis scripts and results (Synopsys Design Compiler)
+│   ├── pnr/                # Physical design files (Synopsys ICC II)
+│   ├── RTL/                # RTL design files
+│   ├── ndm/                # Floorplanning files
+│   ├── PrimeTime/          # Timing analysis files (Synopsys PrimeTime)
+│   ├── fm/                 # Formal verification files (Synopsys Formality)
+│   └── scripts/            # Utility scripts
 │
 └── README.md               # This README file
+```
+
+## Dependencies
+### This project requires the following tools and libraries:
+
+- **Verilog Simulator:** ModelSim, VCS, or equivalent
+- **Synthesis Tool:** Synopsys Design Compiler
+- **Formal Verification Tool:** Synopsys Formality
+- **Physical Design Tool:** Synopsys ICC II
+- **Timing Analysis Tool:** Synopsys PrimeTime
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for more details.
