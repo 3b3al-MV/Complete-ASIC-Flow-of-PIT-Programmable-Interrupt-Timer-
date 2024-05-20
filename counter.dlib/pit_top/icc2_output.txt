@@ -1,0 +1,84 @@
+ 
+                              IC Compiler II (TM)
+
+                  Version V-2023.12 for linux64 - Nov 23, 2023
+  This release has significant feature enhancements. Please review the Release
+                       Notes associated with this release.
+
+                    Copyright (c) 1988 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Error: This script has expired. Please contact Aditya/Amir/Wei-Chih.
+icc2_shell> start_gui
+icc2_shell> open_block design
+Error: Library '' is not found. (LIB-011)
+icc2_shell> open_block design.ndm
+Error: Invalid block name 'design.ndm', invalid view name 'ndm'. (DES-008)
+Error: problem in open_block
+        Use error_info for more info. (CMD-013)
+icc2_shell> open_block /design
+Error: Invalid block name '/design', inappropriate position of '/'. (DES-008)
+Error: problem in open_block
+        Use error_info for more info. (CMD-013)
+icc2_shell> 
+Error: Unable to open file '/home/vlsi/Desktop/DONOT_DELETE_IT/pnr/lib.ndm' for reading; No such file or directory (FILE-001)
+Error: Unable to open file '/home/vlsi/Desktop/DONOT_DELETE_IT/pnr/lib.ndm' for reading; No such file or directory (FILE-001)
+icc2_shell> open_block /home/vlsi/Desktop/DONOT_DELETE_IT/pnr/counter.dlib:pit_top.design
+Error: 'open_block' failed. Block 'counter.dlib:pit_top.design' is being edited by process 31058 vlsi@elc-p07-2088-05-. (NDM-029)
+icc2_shell> 
+Terminated.
+
+Stack trace for crashing thread
+-------------------------------
+SNPSee_72fe6ee5e6adf88ac107a01d196ffb8ed40842348ffb0f8b+36
+SNPSee_9ea8dbbd5e74784445edf9ed12a0bc4777b489dcaefdb88f6aa47f4097fccf5e+156
+SNPSee_9ea8dbbd5e74784484d3cce2fced02c05a3783bc3b9f8fad49ba3bacacc1ac73ecf347a38534d06f+2085
+_L_unlock_13+52
+__nanosleep_nocancel+36
+SNPSee_80051c3e017cbcc0e527ada7eaf06b628ebb3290689b73b98b5c8979b8a944fddf301789f3c04ee9e18e02a6e8dc8c8cc8d90585d03a00ea2c8799e295df6dd58edeea89405a17bcdadbde37f16eda3e+1221
+QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>)+283
+QCoreApplication::exec()+158
+SNPSee_b81f4656f0d7d3ca1b0bca755b60caea2cb50375ef5e9df280c2a7ba1e2ca19f7750e3d580600edd04a01dc4363d697fcd6b18c4d0ab558c+539
+SNPSee_b3a63ca9beb66366a2beecdfa325f5f850e37c16b964335ba934f8a7afefeaf1+989
+SNPSee_6188b3f9a7e769c7eb2dc22ab181ff5c0260e7bf3c6e6c5b6dd310362dd3e58b19a33122e2a80c1014bca5a076370ba0686492d474ef148ca36ababef5945158a888f7e536545dec88d039942c447aad829ec3c9a13ccf1352c7f068f1dc0d713b949058f841385ce96831542394be36f2ec7e463409336ff9646fa385cc5a553529ff78d8277054cb68eca1e74b2650bc52a0a187546145fe12efa21abc06a8+19711
+main+2112
+__libc_start_main+245
+SNPSee_d06eed713327be76+41
+
+A detailed stack trace has been captured in /home/vlsi/Desktop/DONOT_DELETE_IT/pnr/counter.dlib/pit_top/Synopsys_stack_trace_364.txt.
+
+The tool has just encountered a fatal error:
+
+If you encountered this fatal error when using the most recent
+Synopsys release, submit the above stack trace and a test case that
+reproduces the problem to the Synopsys Support Center by using
+Enter A Call at http://solvnet.synopsys.com/EnterACall.
+
+* For information about the latest software releases, go to the Synopsys
+  SolvNet Release Library at http://solvnet.synopsys.com/ReleaseLibrary.
+
+* For information about required Operating System patches, go to
+  http://www.synopsys.com/support
+
+
+Fatal: Internal system error, cannot recover.
+Error code=15
+CPU time=2296
+
+Release = 'V-2023.12'  Architecture = 'linux64'  Program = 'IC Compiler II'
+Exec = '/eda/synopsys/icc2/V-2023.12/linux64/nwtn/bin/dgcom_exec'
+
+'1077090981 140381783914032 140381783912093 502565765 140381053680491 140381053712494 515519163 1072721661 270962415 270970320 140380984878421 270880809'
