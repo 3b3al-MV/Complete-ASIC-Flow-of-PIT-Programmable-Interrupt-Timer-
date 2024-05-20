@@ -1,0 +1,1565 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 10
+Design : pit_top
+Version: V-2023.12
+Date   : Sat Mar 23 15:47:52 2024
+****************************************
+
+Operating Conditions: WORST   Library: saed90nm_max_lth
+Wire Load Model Mode: enclosed
+
+  Startpoint: wb_cyc_i (input port clocked by wb_clk_i)
+  Endpoint: wb_ack_o (output port clocked by V_Clk)
+  Path Group: COMB
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_wb_bus_0_16_0  8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  input external delay                                    2.00       2.20 f
+  wb_cyc_i (in)                                           0.00       2.20 f
+  wishbone/wb_cyc_i (pit_wb_bus_0_16_0)                   0.00       2.20 f
+  wishbone/U24/QN (NAND2X1)                               0.03       2.23 r
+  wishbone/U23/QN (NOR2X0)                                0.07       2.30 f
+  wishbone/wb_ack_o (pit_wb_bus_0_16_0)                   0.00       2.30 f
+  wb_ack_o (out)                                          0.00       2.30 f
+  data arrival time                                                  2.30
+
+  clock V_Clk (rise edge)                                 5.00       5.00
+  clock network delay (ideal)                             0.00       5.00
+  output external delay                                  -1.14       3.86
+  data required time                                                 3.86
+  --------------------------------------------------------------------------
+  data required time                                                 3.86
+  data arrival time                                                 -2.30
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.56
+
+
+  Startpoint: ext_sync_i (input port clocked by wb_clk_i)
+  Endpoint: prescale/cnt_n_reg[14]
+            (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Path Group: INPUTS
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_prescale_15_1_0
+                     8000                  saed90nm_max_lth
+  pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2
+                     8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  input external delay                                    2.00       2.20 f
+  ext_sync_i (in)                                         0.01       2.21 f
+  prescale/ext_sync_i (pit_prescale_15_1_0)               0.00       2.21 f
+  prescale/U30/Q (AO22X1)                                 0.06       2.27 f
+  prescale/U32/Q (AND2X1)                                 0.08       2.36 f
+  prescale/U3/Q (AND2X1)                                  0.06       2.41 f
+  prescale/add_122_aco/A[0] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       2.41 f
+  prescale/add_122_aco/U1_1_1/C1 (HADDX1)                 0.06       2.48 f
+  prescale/add_122_aco/U1_1_2/C1 (HADDX1)                 0.07       2.54 f
+  prescale/add_122_aco/U1_1_3/C1 (HADDX1)                 0.07       2.61 f
+  prescale/add_122_aco/U1_1_4/C1 (HADDX1)                 0.07       2.67 f
+  prescale/add_122_aco/U1_1_5/C1 (HADDX1)                 0.07       2.74 f
+  prescale/add_122_aco/U1_1_6/C1 (HADDX1)                 0.07       2.80 f
+  prescale/add_122_aco/U1_1_7/C1 (HADDX1)                 0.07       2.87 f
+  prescale/add_122_aco/U1_1_8/C1 (HADDX1)                 0.07       2.93 f
+  prescale/add_122_aco/U1_1_9/C1 (HADDX1)                 0.07       3.00 f
+  prescale/add_122_aco/U1_1_10/C1 (HADDX1)                0.07       3.06 f
+  prescale/add_122_aco/U1_1_11/C1 (HADDX1)                0.07       3.13 f
+  prescale/add_122_aco/U1_1_12/C1 (HADDX1)                0.07       3.19 f
+  prescale/add_122_aco/U1_1_13/C1 (HADDX1)                0.07       3.26 f
+  prescale/add_122_aco/U1/Q (XOR2X1)                      0.05       3.31 r
+  prescale/add_122_aco/SUM[14] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       3.31 r
+  prescale/cnt_n_reg[14]/D (DFFARX1)                      0.00       3.31 r
+  data arrival time                                                  3.31
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  prescale/cnt_n_reg[14]/CLK (DFFARX1)                    0.00       4.85 r
+  library setup time                                     -0.06       4.79
+  data required time                                                 4.79
+  --------------------------------------------------------------------------
+  data required time                                                 4.79
+  data arrival time                                                 -3.31
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.48
+
+
+  Startpoint: ext_sync_i (input port clocked by wb_clk_i)
+  Endpoint: prescale/cnt_n_reg[13]
+            (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Path Group: INPUTS
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_prescale_15_1_0
+                     8000                  saed90nm_max_lth
+  pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2
+                     8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  input external delay                                    2.00       2.20 f
+  ext_sync_i (in)                                         0.01       2.21 f
+  prescale/ext_sync_i (pit_prescale_15_1_0)               0.00       2.21 f
+  prescale/U30/Q (AO22X1)                                 0.06       2.27 f
+  prescale/U32/Q (AND2X1)                                 0.08       2.36 f
+  prescale/U3/Q (AND2X1)                                  0.06       2.41 f
+  prescale/add_122_aco/A[0] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       2.41 f
+  prescale/add_122_aco/U1_1_1/C1 (HADDX1)                 0.06       2.48 f
+  prescale/add_122_aco/U1_1_2/C1 (HADDX1)                 0.07       2.54 f
+  prescale/add_122_aco/U1_1_3/C1 (HADDX1)                 0.07       2.61 f
+  prescale/add_122_aco/U1_1_4/C1 (HADDX1)                 0.07       2.67 f
+  prescale/add_122_aco/U1_1_5/C1 (HADDX1)                 0.07       2.74 f
+  prescale/add_122_aco/U1_1_6/C1 (HADDX1)                 0.07       2.80 f
+  prescale/add_122_aco/U1_1_7/C1 (HADDX1)                 0.07       2.87 f
+  prescale/add_122_aco/U1_1_8/C1 (HADDX1)                 0.07       2.93 f
+  prescale/add_122_aco/U1_1_9/C1 (HADDX1)                 0.07       3.00 f
+  prescale/add_122_aco/U1_1_10/C1 (HADDX1)                0.07       3.06 f
+  prescale/add_122_aco/U1_1_11/C1 (HADDX1)                0.07       3.13 f
+  prescale/add_122_aco/U1_1_12/C1 (HADDX1)                0.07       3.19 f
+  prescale/add_122_aco/U1_1_13/SO (HADDX1)                0.05       3.25 r
+  prescale/add_122_aco/SUM[13] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       3.25 r
+  prescale/cnt_n_reg[13]/D (DFFARX1)                      0.00       3.25 r
+  data arrival time                                                  3.25
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  prescale/cnt_n_reg[13]/CLK (DFFARX1)                    0.00       4.85 r
+  library setup time                                     -0.06       4.79
+  data required time                                                 4.79
+  --------------------------------------------------------------------------
+  data required time                                                 4.79
+  data arrival time                                                 -3.25
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.54
+
+
+  Startpoint: ext_sync_i (input port clocked by wb_clk_i)
+  Endpoint: prescale/cnt_n_reg[12]
+            (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Path Group: INPUTS
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_prescale_15_1_0
+                     8000                  saed90nm_max_lth
+  pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2
+                     8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  input external delay                                    2.00       2.20 f
+  ext_sync_i (in)                                         0.01       2.21 f
+  prescale/ext_sync_i (pit_prescale_15_1_0)               0.00       2.21 f
+  prescale/U30/Q (AO22X1)                                 0.06       2.27 f
+  prescale/U32/Q (AND2X1)                                 0.08       2.36 f
+  prescale/U3/Q (AND2X1)                                  0.06       2.41 f
+  prescale/add_122_aco/A[0] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       2.41 f
+  prescale/add_122_aco/U1_1_1/C1 (HADDX1)                 0.06       2.48 f
+  prescale/add_122_aco/U1_1_2/C1 (HADDX1)                 0.07       2.54 f
+  prescale/add_122_aco/U1_1_3/C1 (HADDX1)                 0.07       2.61 f
+  prescale/add_122_aco/U1_1_4/C1 (HADDX1)                 0.07       2.67 f
+  prescale/add_122_aco/U1_1_5/C1 (HADDX1)                 0.07       2.74 f
+  prescale/add_122_aco/U1_1_6/C1 (HADDX1)                 0.07       2.80 f
+  prescale/add_122_aco/U1_1_7/C1 (HADDX1)                 0.07       2.87 f
+  prescale/add_122_aco/U1_1_8/C1 (HADDX1)                 0.07       2.93 f
+  prescale/add_122_aco/U1_1_9/C1 (HADDX1)                 0.07       3.00 f
+  prescale/add_122_aco/U1_1_10/C1 (HADDX1)                0.07       3.06 f
+  prescale/add_122_aco/U1_1_11/C1 (HADDX1)                0.07       3.13 f
+  prescale/add_122_aco/U1_1_12/SO (HADDX1)                0.05       3.18 r
+  prescale/add_122_aco/SUM[12] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       3.18 r
+  prescale/cnt_n_reg[12]/D (DFFARX1)                      0.00       3.18 r
+  data arrival time                                                  3.18
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  prescale/cnt_n_reg[12]/CLK (DFFARX1)                    0.00       4.85 r
+  library setup time                                     -0.06       4.79
+  data required time                                                 4.79
+  --------------------------------------------------------------------------
+  data required time                                                 4.79
+  data arrival time                                                 -3.18
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.61
+
+
+  Startpoint: ext_sync_i (input port clocked by wb_clk_i)
+  Endpoint: prescale/cnt_n_reg[11]
+            (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Path Group: INPUTS
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_prescale_15_1_0
+                     8000                  saed90nm_max_lth
+  pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2
+                     8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  input external delay                                    2.00       2.20 f
+  ext_sync_i (in)                                         0.01       2.21 f
+  prescale/ext_sync_i (pit_prescale_15_1_0)               0.00       2.21 f
+  prescale/U30/Q (AO22X1)                                 0.06       2.27 f
+  prescale/U32/Q (AND2X1)                                 0.08       2.36 f
+  prescale/U3/Q (AND2X1)                                  0.06       2.41 f
+  prescale/add_122_aco/A[0] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       2.41 f
+  prescale/add_122_aco/U1_1_1/C1 (HADDX1)                 0.06       2.48 f
+  prescale/add_122_aco/U1_1_2/C1 (HADDX1)                 0.07       2.54 f
+  prescale/add_122_aco/U1_1_3/C1 (HADDX1)                 0.07       2.61 f
+  prescale/add_122_aco/U1_1_4/C1 (HADDX1)                 0.07       2.67 f
+  prescale/add_122_aco/U1_1_5/C1 (HADDX1)                 0.07       2.74 f
+  prescale/add_122_aco/U1_1_6/C1 (HADDX1)                 0.07       2.80 f
+  prescale/add_122_aco/U1_1_7/C1 (HADDX1)                 0.07       2.87 f
+  prescale/add_122_aco/U1_1_8/C1 (HADDX1)                 0.07       2.93 f
+  prescale/add_122_aco/U1_1_9/C1 (HADDX1)                 0.07       3.00 f
+  prescale/add_122_aco/U1_1_10/C1 (HADDX1)                0.07       3.06 f
+  prescale/add_122_aco/U1_1_11/SO (HADDX1)                0.05       3.12 r
+  prescale/add_122_aco/SUM[11] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       3.12 r
+  prescale/cnt_n_reg[11]/D (DFFARX1)                      0.00       3.12 r
+  data arrival time                                                  3.12
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  prescale/cnt_n_reg[11]/CLK (DFFARX1)                    0.00       4.85 r
+  library setup time                                     -0.06       4.79
+  data required time                                                 4.79
+  --------------------------------------------------------------------------
+  data required time                                                 4.79
+  data arrival time                                                 -3.12
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.67
+
+
+  Startpoint: ext_sync_i (input port clocked by wb_clk_i)
+  Endpoint: prescale/cnt_n_reg[10]
+            (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Path Group: INPUTS
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_prescale_15_1_0
+                     8000                  saed90nm_max_lth
+  pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2
+                     8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  input external delay                                    2.00       2.20 f
+  ext_sync_i (in)                                         0.01       2.21 f
+  prescale/ext_sync_i (pit_prescale_15_1_0)               0.00       2.21 f
+  prescale/U30/Q (AO22X1)                                 0.06       2.27 f
+  prescale/U32/Q (AND2X1)                                 0.08       2.36 f
+  prescale/U3/Q (AND2X1)                                  0.06       2.41 f
+  prescale/add_122_aco/A[0] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       2.41 f
+  prescale/add_122_aco/U1_1_1/C1 (HADDX1)                 0.06       2.48 f
+  prescale/add_122_aco/U1_1_2/C1 (HADDX1)                 0.07       2.54 f
+  prescale/add_122_aco/U1_1_3/C1 (HADDX1)                 0.07       2.61 f
+  prescale/add_122_aco/U1_1_4/C1 (HADDX1)                 0.07       2.67 f
+  prescale/add_122_aco/U1_1_5/C1 (HADDX1)                 0.07       2.74 f
+  prescale/add_122_aco/U1_1_6/C1 (HADDX1)                 0.07       2.80 f
+  prescale/add_122_aco/U1_1_7/C1 (HADDX1)                 0.07       2.87 f
+  prescale/add_122_aco/U1_1_8/C1 (HADDX1)                 0.07       2.93 f
+  prescale/add_122_aco/U1_1_9/C1 (HADDX1)                 0.07       3.00 f
+  prescale/add_122_aco/U1_1_10/SO (HADDX1)                0.05       3.05 r
+  prescale/add_122_aco/SUM[10] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       3.05 r
+  prescale/cnt_n_reg[10]/D (DFFARX1)                      0.00       3.05 r
+  data arrival time                                                  3.05
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  prescale/cnt_n_reg[10]/CLK (DFFARX1)                    0.00       4.85 r
+  library setup time                                     -0.06       4.79
+  data required time                                                 4.79
+  --------------------------------------------------------------------------
+  data required time                                                 4.79
+  data arrival time                                                 -3.05
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.74
+
+
+  Startpoint: ext_sync_i (input port clocked by wb_clk_i)
+  Endpoint: prescale/cnt_n_reg[9]
+            (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Path Group: INPUTS
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_prescale_15_1_0
+                     8000                  saed90nm_max_lth
+  pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2
+                     8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  input external delay                                    2.00       2.20 f
+  ext_sync_i (in)                                         0.01       2.21 f
+  prescale/ext_sync_i (pit_prescale_15_1_0)               0.00       2.21 f
+  prescale/U30/Q (AO22X1)                                 0.06       2.27 f
+  prescale/U32/Q (AND2X1)                                 0.08       2.36 f
+  prescale/U3/Q (AND2X1)                                  0.06       2.41 f
+  prescale/add_122_aco/A[0] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       2.41 f
+  prescale/add_122_aco/U1_1_1/C1 (HADDX1)                 0.06       2.48 f
+  prescale/add_122_aco/U1_1_2/C1 (HADDX1)                 0.07       2.54 f
+  prescale/add_122_aco/U1_1_3/C1 (HADDX1)                 0.07       2.61 f
+  prescale/add_122_aco/U1_1_4/C1 (HADDX1)                 0.07       2.67 f
+  prescale/add_122_aco/U1_1_5/C1 (HADDX1)                 0.07       2.74 f
+  prescale/add_122_aco/U1_1_6/C1 (HADDX1)                 0.07       2.80 f
+  prescale/add_122_aco/U1_1_7/C1 (HADDX1)                 0.07       2.87 f
+  prescale/add_122_aco/U1_1_8/C1 (HADDX1)                 0.07       2.93 f
+  prescale/add_122_aco/U1_1_9/SO (HADDX1)                 0.05       2.99 r
+  prescale/add_122_aco/SUM[9] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       2.99 r
+  prescale/cnt_n_reg[9]/D (DFFARX1)                       0.00       2.99 r
+  data arrival time                                                  2.99
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  prescale/cnt_n_reg[9]/CLK (DFFARX1)                     0.00       4.85 r
+  library setup time                                     -0.06       4.79
+  data required time                                                 4.79
+  --------------------------------------------------------------------------
+  data required time                                                 4.79
+  data arrival time                                                 -2.99
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.80
+
+
+  Startpoint: ext_sync_i (input port clocked by wb_clk_i)
+  Endpoint: prescale/cnt_n_reg[8]
+            (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Path Group: INPUTS
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_prescale_15_1_0
+                     8000                  saed90nm_max_lth
+  pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2
+                     8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  input external delay                                    2.00       2.20 f
+  ext_sync_i (in)                                         0.01       2.21 f
+  prescale/ext_sync_i (pit_prescale_15_1_0)               0.00       2.21 f
+  prescale/U30/Q (AO22X1)                                 0.06       2.27 f
+  prescale/U32/Q (AND2X1)                                 0.08       2.36 f
+  prescale/U3/Q (AND2X1)                                  0.06       2.41 f
+  prescale/add_122_aco/A[0] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       2.41 f
+  prescale/add_122_aco/U1_1_1/C1 (HADDX1)                 0.06       2.48 f
+  prescale/add_122_aco/U1_1_2/C1 (HADDX1)                 0.07       2.54 f
+  prescale/add_122_aco/U1_1_3/C1 (HADDX1)                 0.07       2.61 f
+  prescale/add_122_aco/U1_1_4/C1 (HADDX1)                 0.07       2.67 f
+  prescale/add_122_aco/U1_1_5/C1 (HADDX1)                 0.07       2.74 f
+  prescale/add_122_aco/U1_1_6/C1 (HADDX1)                 0.07       2.80 f
+  prescale/add_122_aco/U1_1_7/C1 (HADDX1)                 0.07       2.87 f
+  prescale/add_122_aco/U1_1_8/SO (HADDX1)                 0.05       2.92 r
+  prescale/add_122_aco/SUM[8] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       2.92 r
+  prescale/cnt_n_reg[8]/D (DFFARX1)                       0.00       2.92 r
+  data arrival time                                                  2.92
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  prescale/cnt_n_reg[8]/CLK (DFFARX1)                     0.00       4.85 r
+  library setup time                                     -0.06       4.79
+  data required time                                                 4.79
+  --------------------------------------------------------------------------
+  data required time                                                 4.79
+  data arrival time                                                 -2.92
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.87
+
+
+  Startpoint: ext_sync_i (input port clocked by wb_clk_i)
+  Endpoint: prescale/cnt_n_reg[7]
+            (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Path Group: INPUTS
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_prescale_15_1_0
+                     8000                  saed90nm_max_lth
+  pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2
+                     8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  input external delay                                    2.00       2.20 f
+  ext_sync_i (in)                                         0.01       2.21 f
+  prescale/ext_sync_i (pit_prescale_15_1_0)               0.00       2.21 f
+  prescale/U30/Q (AO22X1)                                 0.06       2.27 f
+  prescale/U32/Q (AND2X1)                                 0.08       2.36 f
+  prescale/U3/Q (AND2X1)                                  0.06       2.41 f
+  prescale/add_122_aco/A[0] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       2.41 f
+  prescale/add_122_aco/U1_1_1/C1 (HADDX1)                 0.06       2.48 f
+  prescale/add_122_aco/U1_1_2/C1 (HADDX1)                 0.07       2.54 f
+  prescale/add_122_aco/U1_1_3/C1 (HADDX1)                 0.07       2.61 f
+  prescale/add_122_aco/U1_1_4/C1 (HADDX1)                 0.07       2.67 f
+  prescale/add_122_aco/U1_1_5/C1 (HADDX1)                 0.07       2.74 f
+  prescale/add_122_aco/U1_1_6/C1 (HADDX1)                 0.07       2.80 f
+  prescale/add_122_aco/U1_1_7/SO (HADDX1)                 0.05       2.85 r
+  prescale/add_122_aco/SUM[7] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       2.85 r
+  prescale/cnt_n_reg[7]/D (DFFARX1)                       0.00       2.85 r
+  data arrival time                                                  2.85
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  prescale/cnt_n_reg[7]/CLK (DFFARX1)                     0.00       4.85 r
+  library setup time                                     -0.06       4.79
+  data required time                                                 4.79
+  --------------------------------------------------------------------------
+  data required time                                                 4.79
+  data arrival time                                                 -2.85
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.93
+
+
+  Startpoint: ext_sync_i (input port clocked by wb_clk_i)
+  Endpoint: prescale/cnt_n_reg[6]
+            (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Path Group: INPUTS
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_prescale_15_1_0
+                     8000                  saed90nm_max_lth
+  pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2
+                     8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  input external delay                                    2.00       2.20 f
+  ext_sync_i (in)                                         0.01       2.21 f
+  prescale/ext_sync_i (pit_prescale_15_1_0)               0.00       2.21 f
+  prescale/U30/Q (AO22X1)                                 0.06       2.27 f
+  prescale/U32/Q (AND2X1)                                 0.08       2.36 f
+  prescale/U3/Q (AND2X1)                                  0.06       2.41 f
+  prescale/add_122_aco/A[0] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       2.41 f
+  prescale/add_122_aco/U1_1_1/C1 (HADDX1)                 0.06       2.48 f
+  prescale/add_122_aco/U1_1_2/C1 (HADDX1)                 0.07       2.54 f
+  prescale/add_122_aco/U1_1_3/C1 (HADDX1)                 0.07       2.61 f
+  prescale/add_122_aco/U1_1_4/C1 (HADDX1)                 0.07       2.67 f
+  prescale/add_122_aco/U1_1_5/C1 (HADDX1)                 0.07       2.74 f
+  prescale/add_122_aco/U1_1_6/SO (HADDX1)                 0.05       2.79 r
+  prescale/add_122_aco/SUM[6] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       2.79 r
+  prescale/cnt_n_reg[6]/D (DFFARX1)                       0.00       2.79 r
+  data arrival time                                                  2.79
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  prescale/cnt_n_reg[6]/CLK (DFFARX1)                     0.00       4.85 r
+  library setup time                                     -0.06       4.79
+  data required time                                                 4.79
+  --------------------------------------------------------------------------
+  data required time                                                 4.79
+  data arrival time                                                 -2.79
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.00
+
+
+  Startpoint: ext_sync_i (input port clocked by wb_clk_i)
+  Endpoint: prescale/cnt_n_reg[5]
+            (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Path Group: INPUTS
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_prescale_15_1_0
+                     8000                  saed90nm_max_lth
+  pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2
+                     8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  input external delay                                    2.00       2.20 f
+  ext_sync_i (in)                                         0.01       2.21 f
+  prescale/ext_sync_i (pit_prescale_15_1_0)               0.00       2.21 f
+  prescale/U30/Q (AO22X1)                                 0.06       2.27 f
+  prescale/U32/Q (AND2X1)                                 0.08       2.36 f
+  prescale/U3/Q (AND2X1)                                  0.06       2.41 f
+  prescale/add_122_aco/A[0] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       2.41 f
+  prescale/add_122_aco/U1_1_1/C1 (HADDX1)                 0.06       2.48 f
+  prescale/add_122_aco/U1_1_2/C1 (HADDX1)                 0.07       2.54 f
+  prescale/add_122_aco/U1_1_3/C1 (HADDX1)                 0.07       2.61 f
+  prescale/add_122_aco/U1_1_4/C1 (HADDX1)                 0.07       2.67 f
+  prescale/add_122_aco/U1_1_5/SO (HADDX1)                 0.05       2.72 r
+  prescale/add_122_aco/SUM[5] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       2.72 r
+  prescale/cnt_n_reg[5]/D (DFFARX1)                       0.00       2.72 r
+  data arrival time                                                  2.72
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  prescale/cnt_n_reg[5]/CLK (DFFARX1)                     0.00       4.85 r
+  library setup time                                     -0.06       4.79
+  data required time                                                 4.79
+  --------------------------------------------------------------------------
+  data required time                                                 4.79
+  data arrival time                                                 -2.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.06
+
+
+  Startpoint: wishbone/addr_latch_reg[0]
+              (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: wb_dat_o[9]
+            (output port clocked by wb_clk_i)
+  Path Group: OUTPUTS
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_wb_bus_0_16_0  8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  wishbone/addr_latch_reg[0]/CLK (DFFX1)                  0.00       0.20 r
+  wishbone/addr_latch_reg[0]/Q (DFFX1)                    0.12       0.32 r
+  wishbone/U26/QN (NOR3X0)                                0.13       0.45 f
+  wishbone/U5/Q (AO222X1)                                 0.12       0.57 f
+  wishbone/wb_dat_o[9] (pit_wb_bus_0_16_0)                0.00       0.57 f
+  wb_dat_o[9] (out)                                       0.00       0.57 f
+  data arrival time                                                  0.57
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  output external delay                                  -2.00       2.85
+  data required time                                                 2.85
+  --------------------------------------------------------------------------
+  data required time                                                 2.85
+  data arrival time                                                 -0.57
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.28
+
+
+  Startpoint: wishbone/addr_latch_reg[0]
+              (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: wb_dat_o[8]
+            (output port clocked by wb_clk_i)
+  Path Group: OUTPUTS
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_wb_bus_0_16_0  8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  wishbone/addr_latch_reg[0]/CLK (DFFX1)                  0.00       0.20 r
+  wishbone/addr_latch_reg[0]/Q (DFFX1)                    0.12       0.32 r
+  wishbone/U26/QN (NOR3X0)                                0.13       0.45 f
+  wishbone/U6/Q (AO222X1)                                 0.12       0.57 f
+  wishbone/wb_dat_o[8] (pit_wb_bus_0_16_0)                0.00       0.57 f
+  wb_dat_o[8] (out)                                       0.00       0.57 f
+  data arrival time                                                  0.57
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  output external delay                                  -2.00       2.85
+  data required time                                                 2.85
+  --------------------------------------------------------------------------
+  data required time                                                 2.85
+  data arrival time                                                 -0.57
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.28
+
+
+  Startpoint: wishbone/addr_latch_reg[0]
+              (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: wb_dat_o[7]
+            (output port clocked by wb_clk_i)
+  Path Group: OUTPUTS
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_wb_bus_0_16_0  8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  wishbone/addr_latch_reg[0]/CLK (DFFX1)                  0.00       0.20 r
+  wishbone/addr_latch_reg[0]/Q (DFFX1)                    0.12       0.32 r
+  wishbone/U26/QN (NOR3X0)                                0.13       0.45 f
+  wishbone/U7/Q (AO222X1)                                 0.12       0.57 f
+  wishbone/wb_dat_o[7] (pit_wb_bus_0_16_0)                0.00       0.57 f
+  wb_dat_o[7] (out)                                       0.00       0.57 f
+  data arrival time                                                  0.57
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  output external delay                                  -2.00       2.85
+  data required time                                                 2.85
+  --------------------------------------------------------------------------
+  data required time                                                 2.85
+  data arrival time                                                 -0.57
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.28
+
+
+  Startpoint: wishbone/addr_latch_reg[0]
+              (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: wb_dat_o[6]
+            (output port clocked by wb_clk_i)
+  Path Group: OUTPUTS
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_wb_bus_0_16_0  8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  wishbone/addr_latch_reg[0]/CLK (DFFX1)                  0.00       0.20 r
+  wishbone/addr_latch_reg[0]/Q (DFFX1)                    0.12       0.32 r
+  wishbone/U26/QN (NOR3X0)                                0.13       0.45 f
+  wishbone/U8/Q (AO222X1)                                 0.12       0.57 f
+  wishbone/wb_dat_o[6] (pit_wb_bus_0_16_0)                0.00       0.57 f
+  wb_dat_o[6] (out)                                       0.00       0.57 f
+  data arrival time                                                  0.57
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  output external delay                                  -2.00       2.85
+  data required time                                                 2.85
+  --------------------------------------------------------------------------
+  data required time                                                 2.85
+  data arrival time                                                 -0.57
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.28
+
+
+  Startpoint: wishbone/addr_latch_reg[0]
+              (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: wb_dat_o[5]
+            (output port clocked by wb_clk_i)
+  Path Group: OUTPUTS
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_wb_bus_0_16_0  8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  wishbone/addr_latch_reg[0]/CLK (DFFX1)                  0.00       0.20 r
+  wishbone/addr_latch_reg[0]/Q (DFFX1)                    0.12       0.32 r
+  wishbone/U26/QN (NOR3X0)                                0.13       0.45 f
+  wishbone/U9/Q (AO222X1)                                 0.12       0.57 f
+  wishbone/wb_dat_o[5] (pit_wb_bus_0_16_0)                0.00       0.57 f
+  wb_dat_o[5] (out)                                       0.00       0.57 f
+  data arrival time                                                  0.57
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  output external delay                                  -2.00       2.85
+  data required time                                                 2.85
+  --------------------------------------------------------------------------
+  data required time                                                 2.85
+  data arrival time                                                 -0.57
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.28
+
+
+  Startpoint: wishbone/addr_latch_reg[0]
+              (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: wb_dat_o[4]
+            (output port clocked by wb_clk_i)
+  Path Group: OUTPUTS
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_wb_bus_0_16_0  8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  wishbone/addr_latch_reg[0]/CLK (DFFX1)                  0.00       0.20 r
+  wishbone/addr_latch_reg[0]/Q (DFFX1)                    0.12       0.32 r
+  wishbone/U26/QN (NOR3X0)                                0.13       0.45 f
+  wishbone/U10/Q (AO222X1)                                0.12       0.57 f
+  wishbone/wb_dat_o[4] (pit_wb_bus_0_16_0)                0.00       0.57 f
+  wb_dat_o[4] (out)                                       0.00       0.57 f
+  data arrival time                                                  0.57
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  output external delay                                  -2.00       2.85
+  data required time                                                 2.85
+  --------------------------------------------------------------------------
+  data required time                                                 2.85
+  data arrival time                                                 -0.57
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.28
+
+
+  Startpoint: wishbone/addr_latch_reg[0]
+              (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: wb_dat_o[3]
+            (output port clocked by wb_clk_i)
+  Path Group: OUTPUTS
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_wb_bus_0_16_0  8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  wishbone/addr_latch_reg[0]/CLK (DFFX1)                  0.00       0.20 r
+  wishbone/addr_latch_reg[0]/Q (DFFX1)                    0.12       0.32 r
+  wishbone/U26/QN (NOR3X0)                                0.13       0.45 f
+  wishbone/U11/Q (AO222X1)                                0.12       0.57 f
+  wishbone/wb_dat_o[3] (pit_wb_bus_0_16_0)                0.00       0.57 f
+  wb_dat_o[3] (out)                                       0.00       0.57 f
+  data arrival time                                                  0.57
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  output external delay                                  -2.00       2.85
+  data required time                                                 2.85
+  --------------------------------------------------------------------------
+  data required time                                                 2.85
+  data arrival time                                                 -0.57
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.28
+
+
+  Startpoint: wishbone/addr_latch_reg[0]
+              (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: wb_dat_o[2]
+            (output port clocked by wb_clk_i)
+  Path Group: OUTPUTS
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_wb_bus_0_16_0  8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  wishbone/addr_latch_reg[0]/CLK (DFFX1)                  0.00       0.20 r
+  wishbone/addr_latch_reg[0]/Q (DFFX1)                    0.12       0.32 r
+  wishbone/U26/QN (NOR3X0)                                0.13       0.45 f
+  wishbone/U12/Q (AO222X1)                                0.12       0.57 f
+  wishbone/wb_dat_o[2] (pit_wb_bus_0_16_0)                0.00       0.57 f
+  wb_dat_o[2] (out)                                       0.00       0.57 f
+  data arrival time                                                  0.57
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  output external delay                                  -2.00       2.85
+  data required time                                                 2.85
+  --------------------------------------------------------------------------
+  data required time                                                 2.85
+  data arrival time                                                 -0.57
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.28
+
+
+  Startpoint: wishbone/addr_latch_reg[0]
+              (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: wb_dat_o[1]
+            (output port clocked by wb_clk_i)
+  Path Group: OUTPUTS
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_wb_bus_0_16_0  8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  wishbone/addr_latch_reg[0]/CLK (DFFX1)                  0.00       0.20 r
+  wishbone/addr_latch_reg[0]/Q (DFFX1)                    0.12       0.32 r
+  wishbone/U26/QN (NOR3X0)                                0.13       0.45 f
+  wishbone/U13/Q (AO222X1)                                0.12       0.57 f
+  wishbone/wb_dat_o[1] (pit_wb_bus_0_16_0)                0.00       0.57 f
+  wb_dat_o[1] (out)                                       0.00       0.57 f
+  data arrival time                                                  0.57
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  output external delay                                  -2.00       2.85
+  data required time                                                 2.85
+  --------------------------------------------------------------------------
+  data required time                                                 2.85
+  data arrival time                                                 -0.57
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.28
+
+
+  Startpoint: wishbone/addr_latch_reg[0]
+              (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: wb_dat_o[0]
+            (output port clocked by wb_clk_i)
+  Path Group: OUTPUTS
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_wb_bus_0_16_0  8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  wishbone/addr_latch_reg[0]/CLK (DFFX1)                  0.00       0.20 r
+  wishbone/addr_latch_reg[0]/Q (DFFX1)                    0.12       0.32 r
+  wishbone/U26/QN (NOR3X0)                                0.13       0.45 f
+  wishbone/U20/Q (AO222X1)                                0.12       0.57 f
+  wishbone/wb_dat_o[0] (pit_wb_bus_0_16_0)                0.00       0.57 f
+  wb_dat_o[0] (out)                                       0.00       0.57 f
+  data arrival time                                                  0.57
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  output external delay                                  -2.00       2.85
+  data required time                                                 2.85
+  --------------------------------------------------------------------------
+  data required time                                                 2.85
+  data arrival time                                                 -0.57
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.28
+
+
+  Startpoint: regs/pit_pre_reg[3]
+              (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: prescale/cnt_n_reg[14]
+            (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Path Group: wb_clk_i
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_prescale_15_1_0
+                     8000                  saed90nm_max_lth
+  pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2
+                     8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  regs/pit_pre_reg[3]/CLK (DFFARX1)                       0.00       0.20 r
+  regs/pit_pre_reg[3]/Q (DFFARX1)                         0.17       0.37 f
+  regs/pit_pre_scl[3] (pit_regs_0_16_0_16)                0.00       0.37 f
+  prescale/divisor[3] (pit_prescale_15_1_0)               0.00       0.37 f
+  prescale/U41/ZN (INVX0)                                 0.04       0.41 r
+  prescale/U27/Q (AND2X1)                                 0.06       0.47 r
+  prescale/U22/Q (AND3X1)                                 0.06       0.53 r
+  prescale/U33/QN (NOR2X0)                                0.04       0.57 f
+  prescale/U42/QN (NAND2X1)                               0.02       0.59 r
+  prescale/U60/Q (XNOR2X1)                                0.08       0.67 r
+  prescale/U61/QN (NAND4X0)                               0.04       0.71 f
+  prescale/U40/Q (OR4X1)                                  0.07       0.77 f
+  prescale/U32/Q (AND2X1)                                 0.08       0.85 f
+  prescale/U3/Q (AND2X1)                                  0.06       0.91 f
+  prescale/add_122_aco/A[0] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       0.91 f
+  prescale/add_122_aco/U1_1_1/C1 (HADDX1)                 0.06       0.97 f
+  prescale/add_122_aco/U1_1_2/C1 (HADDX1)                 0.07       1.04 f
+  prescale/add_122_aco/U1_1_3/C1 (HADDX1)                 0.07       1.10 f
+  prescale/add_122_aco/U1_1_4/C1 (HADDX1)                 0.07       1.17 f
+  prescale/add_122_aco/U1_1_5/C1 (HADDX1)                 0.07       1.23 f
+  prescale/add_122_aco/U1_1_6/C1 (HADDX1)                 0.07       1.30 f
+  prescale/add_122_aco/U1_1_7/C1 (HADDX1)                 0.07       1.36 f
+  prescale/add_122_aco/U1_1_8/C1 (HADDX1)                 0.07       1.43 f
+  prescale/add_122_aco/U1_1_9/C1 (HADDX1)                 0.07       1.49 f
+  prescale/add_122_aco/U1_1_10/C1 (HADDX1)                0.07       1.56 f
+  prescale/add_122_aco/U1_1_11/C1 (HADDX1)                0.07       1.63 f
+  prescale/add_122_aco/U1_1_12/C1 (HADDX1)                0.07       1.69 f
+  prescale/add_122_aco/U1_1_13/C1 (HADDX1)                0.07       1.76 f
+  prescale/add_122_aco/U1/Q (XOR2X1)                      0.05       1.81 r
+  prescale/add_122_aco/SUM[14] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       1.81 r
+  prescale/cnt_n_reg[14]/D (DFFARX1)                      0.00       1.81 r
+  data arrival time                                                  1.81
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  prescale/cnt_n_reg[14]/CLK (DFFARX1)                    0.00       4.85 r
+  library setup time                                     -0.06       4.79
+  data required time                                                 4.79
+  --------------------------------------------------------------------------
+  data required time                                                 4.79
+  data arrival time                                                 -1.81
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.98
+
+
+  Startpoint: regs/pit_pre_reg[3]
+              (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: prescale/cnt_n_reg[13]
+            (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Path Group: wb_clk_i
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_prescale_15_1_0
+                     8000                  saed90nm_max_lth
+  pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2
+                     8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  regs/pit_pre_reg[3]/CLK (DFFARX1)                       0.00       0.20 r
+  regs/pit_pre_reg[3]/Q (DFFARX1)                         0.17       0.37 f
+  regs/pit_pre_scl[3] (pit_regs_0_16_0_16)                0.00       0.37 f
+  prescale/divisor[3] (pit_prescale_15_1_0)               0.00       0.37 f
+  prescale/U41/ZN (INVX0)                                 0.04       0.41 r
+  prescale/U27/Q (AND2X1)                                 0.06       0.47 r
+  prescale/U22/Q (AND3X1)                                 0.06       0.53 r
+  prescale/U33/QN (NOR2X0)                                0.04       0.57 f
+  prescale/U42/QN (NAND2X1)                               0.02       0.59 r
+  prescale/U60/Q (XNOR2X1)                                0.08       0.67 r
+  prescale/U61/QN (NAND4X0)                               0.04       0.71 f
+  prescale/U40/Q (OR4X1)                                  0.07       0.77 f
+  prescale/U32/Q (AND2X1)                                 0.08       0.85 f
+  prescale/U3/Q (AND2X1)                                  0.06       0.91 f
+  prescale/add_122_aco/A[0] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       0.91 f
+  prescale/add_122_aco/U1_1_1/C1 (HADDX1)                 0.06       0.97 f
+  prescale/add_122_aco/U1_1_2/C1 (HADDX1)                 0.07       1.04 f
+  prescale/add_122_aco/U1_1_3/C1 (HADDX1)                 0.07       1.10 f
+  prescale/add_122_aco/U1_1_4/C1 (HADDX1)                 0.07       1.17 f
+  prescale/add_122_aco/U1_1_5/C1 (HADDX1)                 0.07       1.23 f
+  prescale/add_122_aco/U1_1_6/C1 (HADDX1)                 0.07       1.30 f
+  prescale/add_122_aco/U1_1_7/C1 (HADDX1)                 0.07       1.36 f
+  prescale/add_122_aco/U1_1_8/C1 (HADDX1)                 0.07       1.43 f
+  prescale/add_122_aco/U1_1_9/C1 (HADDX1)                 0.07       1.49 f
+  prescale/add_122_aco/U1_1_10/C1 (HADDX1)                0.07       1.56 f
+  prescale/add_122_aco/U1_1_11/C1 (HADDX1)                0.07       1.63 f
+  prescale/add_122_aco/U1_1_12/C1 (HADDX1)                0.07       1.69 f
+  prescale/add_122_aco/U1_1_13/SO (HADDX1)                0.05       1.74 r
+  prescale/add_122_aco/SUM[13] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       1.74 r
+  prescale/cnt_n_reg[13]/D (DFFARX1)                      0.00       1.74 r
+  data arrival time                                                  1.74
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  prescale/cnt_n_reg[13]/CLK (DFFARX1)                    0.00       4.85 r
+  library setup time                                     -0.06       4.79
+  data required time                                                 4.79
+  --------------------------------------------------------------------------
+  data required time                                                 4.79
+  data arrival time                                                 -1.74
+  --------------------------------------------------------------------------
+  slack (MET)                                                        3.05
+
+
+  Startpoint: regs/pit_pre_reg[3]
+              (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: prescale/cnt_n_reg[12]
+            (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Path Group: wb_clk_i
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_prescale_15_1_0
+                     8000                  saed90nm_max_lth
+  pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2
+                     8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  regs/pit_pre_reg[3]/CLK (DFFARX1)                       0.00       0.20 r
+  regs/pit_pre_reg[3]/Q (DFFARX1)                         0.17       0.37 f
+  regs/pit_pre_scl[3] (pit_regs_0_16_0_16)                0.00       0.37 f
+  prescale/divisor[3] (pit_prescale_15_1_0)               0.00       0.37 f
+  prescale/U41/ZN (INVX0)                                 0.04       0.41 r
+  prescale/U27/Q (AND2X1)                                 0.06       0.47 r
+  prescale/U22/Q (AND3X1)                                 0.06       0.53 r
+  prescale/U33/QN (NOR2X0)                                0.04       0.57 f
+  prescale/U42/QN (NAND2X1)                               0.02       0.59 r
+  prescale/U60/Q (XNOR2X1)                                0.08       0.67 r
+  prescale/U61/QN (NAND4X0)                               0.04       0.71 f
+  prescale/U40/Q (OR4X1)                                  0.07       0.77 f
+  prescale/U32/Q (AND2X1)                                 0.08       0.85 f
+  prescale/U3/Q (AND2X1)                                  0.06       0.91 f
+  prescale/add_122_aco/A[0] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       0.91 f
+  prescale/add_122_aco/U1_1_1/C1 (HADDX1)                 0.06       0.97 f
+  prescale/add_122_aco/U1_1_2/C1 (HADDX1)                 0.07       1.04 f
+  prescale/add_122_aco/U1_1_3/C1 (HADDX1)                 0.07       1.10 f
+  prescale/add_122_aco/U1_1_4/C1 (HADDX1)                 0.07       1.17 f
+  prescale/add_122_aco/U1_1_5/C1 (HADDX1)                 0.07       1.23 f
+  prescale/add_122_aco/U1_1_6/C1 (HADDX1)                 0.07       1.30 f
+  prescale/add_122_aco/U1_1_7/C1 (HADDX1)                 0.07       1.36 f
+  prescale/add_122_aco/U1_1_8/C1 (HADDX1)                 0.07       1.43 f
+  prescale/add_122_aco/U1_1_9/C1 (HADDX1)                 0.07       1.49 f
+  prescale/add_122_aco/U1_1_10/C1 (HADDX1)                0.07       1.56 f
+  prescale/add_122_aco/U1_1_11/C1 (HADDX1)                0.07       1.63 f
+  prescale/add_122_aco/U1_1_12/SO (HADDX1)                0.05       1.68 r
+  prescale/add_122_aco/SUM[12] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       1.68 r
+  prescale/cnt_n_reg[12]/D (DFFARX1)                      0.00       1.68 r
+  data arrival time                                                  1.68
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  prescale/cnt_n_reg[12]/CLK (DFFARX1)                    0.00       4.85 r
+  library setup time                                     -0.06       4.79
+  data required time                                                 4.79
+  --------------------------------------------------------------------------
+  data required time                                                 4.79
+  data arrival time                                                 -1.68
+  --------------------------------------------------------------------------
+  slack (MET)                                                        3.11
+
+
+  Startpoint: regs/pit_pre_reg[3]
+              (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: prescale/cnt_n_reg[11]
+            (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Path Group: wb_clk_i
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_prescale_15_1_0
+                     8000                  saed90nm_max_lth
+  pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2
+                     8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  regs/pit_pre_reg[3]/CLK (DFFARX1)                       0.00       0.20 r
+  regs/pit_pre_reg[3]/Q (DFFARX1)                         0.17       0.37 f
+  regs/pit_pre_scl[3] (pit_regs_0_16_0_16)                0.00       0.37 f
+  prescale/divisor[3] (pit_prescale_15_1_0)               0.00       0.37 f
+  prescale/U41/ZN (INVX0)                                 0.04       0.41 r
+  prescale/U27/Q (AND2X1)                                 0.06       0.47 r
+  prescale/U22/Q (AND3X1)                                 0.06       0.53 r
+  prescale/U33/QN (NOR2X0)                                0.04       0.57 f
+  prescale/U42/QN (NAND2X1)                               0.02       0.59 r
+  prescale/U60/Q (XNOR2X1)                                0.08       0.67 r
+  prescale/U61/QN (NAND4X0)                               0.04       0.71 f
+  prescale/U40/Q (OR4X1)                                  0.07       0.77 f
+  prescale/U32/Q (AND2X1)                                 0.08       0.85 f
+  prescale/U3/Q (AND2X1)                                  0.06       0.91 f
+  prescale/add_122_aco/A[0] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       0.91 f
+  prescale/add_122_aco/U1_1_1/C1 (HADDX1)                 0.06       0.97 f
+  prescale/add_122_aco/U1_1_2/C1 (HADDX1)                 0.07       1.04 f
+  prescale/add_122_aco/U1_1_3/C1 (HADDX1)                 0.07       1.10 f
+  prescale/add_122_aco/U1_1_4/C1 (HADDX1)                 0.07       1.17 f
+  prescale/add_122_aco/U1_1_5/C1 (HADDX1)                 0.07       1.23 f
+  prescale/add_122_aco/U1_1_6/C1 (HADDX1)                 0.07       1.30 f
+  prescale/add_122_aco/U1_1_7/C1 (HADDX1)                 0.07       1.36 f
+  prescale/add_122_aco/U1_1_8/C1 (HADDX1)                 0.07       1.43 f
+  prescale/add_122_aco/U1_1_9/C1 (HADDX1)                 0.07       1.49 f
+  prescale/add_122_aco/U1_1_10/C1 (HADDX1)                0.07       1.56 f
+  prescale/add_122_aco/U1_1_11/SO (HADDX1)                0.05       1.61 r
+  prescale/add_122_aco/SUM[11] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       1.61 r
+  prescale/cnt_n_reg[11]/D (DFFARX1)                      0.00       1.61 r
+  data arrival time                                                  1.61
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  prescale/cnt_n_reg[11]/CLK (DFFARX1)                    0.00       4.85 r
+  library setup time                                     -0.06       4.79
+  data required time                                                 4.79
+  --------------------------------------------------------------------------
+  data required time                                                 4.79
+  data arrival time                                                 -1.61
+  --------------------------------------------------------------------------
+  slack (MET)                                                        3.18
+
+
+  Startpoint: regs/pit_pre_reg[3]
+              (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: prescale/cnt_n_reg[10]
+            (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Path Group: wb_clk_i
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_prescale_15_1_0
+                     8000                  saed90nm_max_lth
+  pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2
+                     8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  regs/pit_pre_reg[3]/CLK (DFFARX1)                       0.00       0.20 r
+  regs/pit_pre_reg[3]/Q (DFFARX1)                         0.17       0.37 f
+  regs/pit_pre_scl[3] (pit_regs_0_16_0_16)                0.00       0.37 f
+  prescale/divisor[3] (pit_prescale_15_1_0)               0.00       0.37 f
+  prescale/U41/ZN (INVX0)                                 0.04       0.41 r
+  prescale/U27/Q (AND2X1)                                 0.06       0.47 r
+  prescale/U22/Q (AND3X1)                                 0.06       0.53 r
+  prescale/U33/QN (NOR2X0)                                0.04       0.57 f
+  prescale/U42/QN (NAND2X1)                               0.02       0.59 r
+  prescale/U60/Q (XNOR2X1)                                0.08       0.67 r
+  prescale/U61/QN (NAND4X0)                               0.04       0.71 f
+  prescale/U40/Q (OR4X1)                                  0.07       0.77 f
+  prescale/U32/Q (AND2X1)                                 0.08       0.85 f
+  prescale/U3/Q (AND2X1)                                  0.06       0.91 f
+  prescale/add_122_aco/A[0] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       0.91 f
+  prescale/add_122_aco/U1_1_1/C1 (HADDX1)                 0.06       0.97 f
+  prescale/add_122_aco/U1_1_2/C1 (HADDX1)                 0.07       1.04 f
+  prescale/add_122_aco/U1_1_3/C1 (HADDX1)                 0.07       1.10 f
+  prescale/add_122_aco/U1_1_4/C1 (HADDX1)                 0.07       1.17 f
+  prescale/add_122_aco/U1_1_5/C1 (HADDX1)                 0.07       1.23 f
+  prescale/add_122_aco/U1_1_6/C1 (HADDX1)                 0.07       1.30 f
+  prescale/add_122_aco/U1_1_7/C1 (HADDX1)                 0.07       1.36 f
+  prescale/add_122_aco/U1_1_8/C1 (HADDX1)                 0.07       1.43 f
+  prescale/add_122_aco/U1_1_9/C1 (HADDX1)                 0.07       1.49 f
+  prescale/add_122_aco/U1_1_10/SO (HADDX1)                0.05       1.55 r
+  prescale/add_122_aco/SUM[10] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       1.55 r
+  prescale/cnt_n_reg[10]/D (DFFARX1)                      0.00       1.55 r
+  data arrival time                                                  1.55
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  prescale/cnt_n_reg[10]/CLK (DFFARX1)                    0.00       4.85 r
+  library setup time                                     -0.06       4.79
+  data required time                                                 4.79
+  --------------------------------------------------------------------------
+  data required time                                                 4.79
+  data arrival time                                                 -1.55
+  --------------------------------------------------------------------------
+  slack (MET)                                                        3.24
+
+
+  Startpoint: regs/pit_pre_reg[3]
+              (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: prescale/cnt_n_reg[9]
+            (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Path Group: wb_clk_i
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_prescale_15_1_0
+                     8000                  saed90nm_max_lth
+  pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2
+                     8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  regs/pit_pre_reg[3]/CLK (DFFARX1)                       0.00       0.20 r
+  regs/pit_pre_reg[3]/Q (DFFARX1)                         0.17       0.37 f
+  regs/pit_pre_scl[3] (pit_regs_0_16_0_16)                0.00       0.37 f
+  prescale/divisor[3] (pit_prescale_15_1_0)               0.00       0.37 f
+  prescale/U41/ZN (INVX0)                                 0.04       0.41 r
+  prescale/U27/Q (AND2X1)                                 0.06       0.47 r
+  prescale/U22/Q (AND3X1)                                 0.06       0.53 r
+  prescale/U33/QN (NOR2X0)                                0.04       0.57 f
+  prescale/U42/QN (NAND2X1)                               0.02       0.59 r
+  prescale/U60/Q (XNOR2X1)                                0.08       0.67 r
+  prescale/U61/QN (NAND4X0)                               0.04       0.71 f
+  prescale/U40/Q (OR4X1)                                  0.07       0.77 f
+  prescale/U32/Q (AND2X1)                                 0.08       0.85 f
+  prescale/U3/Q (AND2X1)                                  0.06       0.91 f
+  prescale/add_122_aco/A[0] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       0.91 f
+  prescale/add_122_aco/U1_1_1/C1 (HADDX1)                 0.06       0.97 f
+  prescale/add_122_aco/U1_1_2/C1 (HADDX1)                 0.07       1.04 f
+  prescale/add_122_aco/U1_1_3/C1 (HADDX1)                 0.07       1.10 f
+  prescale/add_122_aco/U1_1_4/C1 (HADDX1)                 0.07       1.17 f
+  prescale/add_122_aco/U1_1_5/C1 (HADDX1)                 0.07       1.23 f
+  prescale/add_122_aco/U1_1_6/C1 (HADDX1)                 0.07       1.30 f
+  prescale/add_122_aco/U1_1_7/C1 (HADDX1)                 0.07       1.36 f
+  prescale/add_122_aco/U1_1_8/C1 (HADDX1)                 0.07       1.43 f
+  prescale/add_122_aco/U1_1_9/SO (HADDX1)                 0.05       1.48 r
+  prescale/add_122_aco/SUM[9] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       1.48 r
+  prescale/cnt_n_reg[9]/D (DFFARX1)                       0.00       1.48 r
+  data arrival time                                                  1.48
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  prescale/cnt_n_reg[9]/CLK (DFFARX1)                     0.00       4.85 r
+  library setup time                                     -0.06       4.79
+  data required time                                                 4.79
+  --------------------------------------------------------------------------
+  data required time                                                 4.79
+  data arrival time                                                 -1.48
+  --------------------------------------------------------------------------
+  slack (MET)                                                        3.31
+
+
+  Startpoint: regs/pit_pre_reg[3]
+              (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: prescale/cnt_n_reg[8]
+            (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Path Group: wb_clk_i
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_prescale_15_1_0
+                     8000                  saed90nm_max_lth
+  pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2
+                     8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  regs/pit_pre_reg[3]/CLK (DFFARX1)                       0.00       0.20 r
+  regs/pit_pre_reg[3]/Q (DFFARX1)                         0.17       0.37 f
+  regs/pit_pre_scl[3] (pit_regs_0_16_0_16)                0.00       0.37 f
+  prescale/divisor[3] (pit_prescale_15_1_0)               0.00       0.37 f
+  prescale/U41/ZN (INVX0)                                 0.04       0.41 r
+  prescale/U27/Q (AND2X1)                                 0.06       0.47 r
+  prescale/U22/Q (AND3X1)                                 0.06       0.53 r
+  prescale/U33/QN (NOR2X0)                                0.04       0.57 f
+  prescale/U42/QN (NAND2X1)                               0.02       0.59 r
+  prescale/U60/Q (XNOR2X1)                                0.08       0.67 r
+  prescale/U61/QN (NAND4X0)                               0.04       0.71 f
+  prescale/U40/Q (OR4X1)                                  0.07       0.77 f
+  prescale/U32/Q (AND2X1)                                 0.08       0.85 f
+  prescale/U3/Q (AND2X1)                                  0.06       0.91 f
+  prescale/add_122_aco/A[0] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       0.91 f
+  prescale/add_122_aco/U1_1_1/C1 (HADDX1)                 0.06       0.97 f
+  prescale/add_122_aco/U1_1_2/C1 (HADDX1)                 0.07       1.04 f
+  prescale/add_122_aco/U1_1_3/C1 (HADDX1)                 0.07       1.10 f
+  prescale/add_122_aco/U1_1_4/C1 (HADDX1)                 0.07       1.17 f
+  prescale/add_122_aco/U1_1_5/C1 (HADDX1)                 0.07       1.23 f
+  prescale/add_122_aco/U1_1_6/C1 (HADDX1)                 0.07       1.30 f
+  prescale/add_122_aco/U1_1_7/C1 (HADDX1)                 0.07       1.36 f
+  prescale/add_122_aco/U1_1_8/SO (HADDX1)                 0.05       1.42 r
+  prescale/add_122_aco/SUM[8] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       1.42 r
+  prescale/cnt_n_reg[8]/D (DFFARX1)                       0.00       1.42 r
+  data arrival time                                                  1.42
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  prescale/cnt_n_reg[8]/CLK (DFFARX1)                     0.00       4.85 r
+  library setup time                                     -0.06       4.79
+  data required time                                                 4.79
+  --------------------------------------------------------------------------
+  data required time                                                 4.79
+  data arrival time                                                 -1.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        3.37
+
+
+  Startpoint: counter/cnt_n_reg[0]
+              (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: counter/cnt_n_reg[15]
+            (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Path Group: wb_clk_i
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_count_COUNT_SIZE16_DW01_inc_0
+                     8000                  saed90nm_max_lth
+  pit_count_COUNT_SIZE16
+                     8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  counter/cnt_n_reg[0]/CLK (DFFASX1)                      0.00       0.20 r
+  counter/cnt_n_reg[0]/Q (DFFASX1)                        0.17       0.37 f
+  counter/add_76/A[0] (pit_count_COUNT_SIZE16_DW01_inc_0)
+                                                          0.00       0.37 f
+  counter/add_76/U1_1_1/C1 (HADDX1)                       0.07       0.44 f
+  counter/add_76/U1_1_2/C1 (HADDX1)                       0.07       0.50 f
+  counter/add_76/U1_1_3/C1 (HADDX1)                       0.07       0.57 f
+  counter/add_76/U1_1_4/C1 (HADDX1)                       0.07       0.63 f
+  counter/add_76/U1_1_5/C1 (HADDX1)                       0.07       0.70 f
+  counter/add_76/U1_1_6/C1 (HADDX1)                       0.07       0.76 f
+  counter/add_76/U1_1_7/C1 (HADDX1)                       0.07       0.83 f
+  counter/add_76/U1_1_8/C1 (HADDX1)                       0.07       0.89 f
+  counter/add_76/U1_1_9/C1 (HADDX1)                       0.07       0.96 f
+  counter/add_76/U1_1_10/C1 (HADDX1)                      0.07       1.02 f
+  counter/add_76/U1_1_11/C1 (HADDX1)                      0.07       1.09 f
+  counter/add_76/U1_1_12/C1 (HADDX1)                      0.07       1.15 f
+  counter/add_76/U1_1_13/C1 (HADDX1)                      0.07       1.22 f
+  counter/add_76/U1_1_14/C1 (HADDX1)                      0.07       1.29 f
+  counter/add_76/U1/Q (XOR2X1)                            0.05       1.34 r
+  counter/add_76/SUM[15] (pit_count_COUNT_SIZE16_DW01_inc_0)
+                                                          0.00       1.34 r
+  counter/U27/Q (AO22X1)                                  0.05       1.39 r
+  counter/cnt_n_reg[15]/D (DFFARX1)                       0.00       1.39 r
+  data arrival time                                                  1.39
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  counter/cnt_n_reg[15]/CLK (DFFARX1)                     0.00       4.85 r
+  library setup time                                     -0.06       4.79
+  data required time                                                 4.79
+  --------------------------------------------------------------------------
+  data required time                                                 4.79
+  data arrival time                                                 -1.39
+  --------------------------------------------------------------------------
+  slack (MET)                                                        3.40
+
+
+  Startpoint: regs/pit_pre_reg[3]
+              (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: prescale/cnt_n_reg[7]
+            (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Path Group: wb_clk_i
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_prescale_15_1_0
+                     8000                  saed90nm_max_lth
+  pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2
+                     8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  regs/pit_pre_reg[3]/CLK (DFFARX1)                       0.00       0.20 r
+  regs/pit_pre_reg[3]/Q (DFFARX1)                         0.17       0.37 f
+  regs/pit_pre_scl[3] (pit_regs_0_16_0_16)                0.00       0.37 f
+  prescale/divisor[3] (pit_prescale_15_1_0)               0.00       0.37 f
+  prescale/U41/ZN (INVX0)                                 0.04       0.41 r
+  prescale/U27/Q (AND2X1)                                 0.06       0.47 r
+  prescale/U22/Q (AND3X1)                                 0.06       0.53 r
+  prescale/U33/QN (NOR2X0)                                0.04       0.57 f
+  prescale/U42/QN (NAND2X1)                               0.02       0.59 r
+  prescale/U60/Q (XNOR2X1)                                0.08       0.67 r
+  prescale/U61/QN (NAND4X0)                               0.04       0.71 f
+  prescale/U40/Q (OR4X1)                                  0.07       0.77 f
+  prescale/U32/Q (AND2X1)                                 0.08       0.85 f
+  prescale/U3/Q (AND2X1)                                  0.06       0.91 f
+  prescale/add_122_aco/A[0] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       0.91 f
+  prescale/add_122_aco/U1_1_1/C1 (HADDX1)                 0.06       0.97 f
+  prescale/add_122_aco/U1_1_2/C1 (HADDX1)                 0.07       1.04 f
+  prescale/add_122_aco/U1_1_3/C1 (HADDX1)                 0.07       1.10 f
+  prescale/add_122_aco/U1_1_4/C1 (HADDX1)                 0.07       1.17 f
+  prescale/add_122_aco/U1_1_5/C1 (HADDX1)                 0.07       1.23 f
+  prescale/add_122_aco/U1_1_6/C1 (HADDX1)                 0.07       1.30 f
+  prescale/add_122_aco/U1_1_7/SO (HADDX1)                 0.05       1.35 r
+  prescale/add_122_aco/SUM[7] (pit_prescale_15_1_0_DW01_inc_0_DW01_inc_2)
+                                                          0.00       1.35 r
+  prescale/cnt_n_reg[7]/D (DFFARX1)                       0.00       1.35 r
+  data arrival time                                                  1.35
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  prescale/cnt_n_reg[7]/CLK (DFFARX1)                     0.00       4.85 r
+  library setup time                                     -0.06       4.79
+  data required time                                                 4.79
+  --------------------------------------------------------------------------
+  data required time                                                 4.79
+  data arrival time                                                 -1.35
+  --------------------------------------------------------------------------
+  slack (MET)                                                        3.44
+
+
+  Startpoint: counter/cnt_n_reg[0]
+              (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: counter/cnt_n_reg[14]
+            (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Path Group: wb_clk_i
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pit_top            8000                  saed90nm_max_lth
+  pit_count_COUNT_SIZE16_DW01_inc_0
+                     8000                  saed90nm_max_lth
+  pit_count_COUNT_SIZE16
+                     8000                  saed90nm_max_lth
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  counter/cnt_n_reg[0]/CLK (DFFASX1)                      0.00       0.20 r
+  counter/cnt_n_reg[0]/Q (DFFASX1)                        0.17       0.37 f
+  counter/add_76/A[0] (pit_count_COUNT_SIZE16_DW01_inc_0)
+                                                          0.00       0.37 f
+  counter/add_76/U1_1_1/C1 (HADDX1)                       0.07       0.44 f
+  counter/add_76/U1_1_2/C1 (HADDX1)                       0.07       0.50 f
+  counter/add_76/U1_1_3/C1 (HADDX1)                       0.07       0.57 f
+  counter/add_76/U1_1_4/C1 (HADDX1)                       0.07       0.63 f
+  counter/add_76/U1_1_5/C1 (HADDX1)                       0.07       0.70 f
+  counter/add_76/U1_1_6/C1 (HADDX1)                       0.07       0.76 f
+  counter/add_76/U1_1_7/C1 (HADDX1)                       0.07       0.83 f
+  counter/add_76/U1_1_8/C1 (HADDX1)                       0.07       0.89 f
+  counter/add_76/U1_1_9/C1 (HADDX1)                       0.07       0.96 f
+  counter/add_76/U1_1_10/C1 (HADDX1)                      0.07       1.02 f
+  counter/add_76/U1_1_11/C1 (HADDX1)                      0.07       1.09 f
+  counter/add_76/U1_1_12/C1 (HADDX1)                      0.07       1.15 f
+  counter/add_76/U1_1_13/C1 (HADDX1)                      0.07       1.22 f
+  counter/add_76/U1_1_14/SO (HADDX1)                      0.05       1.27 r
+  counter/add_76/SUM[14] (pit_count_COUNT_SIZE16_DW01_inc_0)
+                                                          0.00       1.27 r
+  counter/U26/Q (AO22X1)                                  0.05       1.32 r
+  counter/cnt_n_reg[14]/D (DFFARX1)                       0.00       1.32 r
+  data arrival time                                                  1.32
+
+  clock wb_clk_i (rise edge)                              5.00       5.00
+  clock network delay (ideal)                             0.20       5.20
+  clock uncertainty                                      -0.35       4.85
+  counter/cnt_n_reg[14]/CLK (DFFARX1)                     0.00       4.85 r
+  library setup time                                     -0.06       4.79
+  data required time                                                 4.79
+  --------------------------------------------------------------------------
+  data required time                                                 4.79
+  data arrival time                                                 -1.32
+  --------------------------------------------------------------------------
+  slack (MET)                                                        3.47
+
+
+1

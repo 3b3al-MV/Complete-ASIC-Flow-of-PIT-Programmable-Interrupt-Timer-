@@ -1,0 +1,122 @@
+ 
+****************************************
+Report : qor
+Design : pit_top
+Version: V-2023.12
+Date   : Sat Mar 23 15:47:52 2024
+****************************************
+
+
+  Timing Path Group 'COMB'
+  -----------------------------------
+  Levels of Logic:               2.00
+  Critical Path Length:          0.10
+  Critical Path Slack:           1.56
+  Critical Path Clk Period:      5.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'INPUTS'
+  -----------------------------------
+  Levels of Logic:              17.00
+  Critical Path Length:          1.11
+  Critical Path Slack:           1.48
+  Critical Path Clk Period:      5.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'OUTPUTS'
+  -----------------------------------
+  Levels of Logic:               2.00
+  Critical Path Length:          0.37
+  Critical Path Slack:           2.28
+  Critical Path Clk Period:      5.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'wb_clk_i'
+  -----------------------------------
+  Levels of Logic:              24.00
+  Critical Path Length:          1.61
+  Critical Path Slack:           2.98
+  Critical Path Clk Period:      5.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:         -0.15
+  Total Hold Violation:         -5.40
+  No. of Hold Violations:       61.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          6
+  Hierarchical Port Count:        263
+  Leaf Cell Count:                307
+  Buf/Inv Cell Count:              33
+  Buf Cell Count:                   4
+  Inv Cell Count:                  29
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:       245
+  Sequential Cell Count:           62
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:     2556.518401
+  Noncombinational Area:  1975.910429
+  Buf/Inv Area:            182.476805
+  Total Buffer Area:            22.12
+  Total Inverter Area:         160.36
+  Macro/Black Box Area:      0.000000
+  Net Area:                225.795685
+  -----------------------------------
+  Cell Area:              4532.428830
+  Design Area:            4758.224515
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:           372
+  Nets With Violations:             0
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: elc-p07-2088-05-lnx
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    0.94
+  Logic Optimization:                  0.22
+  Mapping Optimization:                0.15
+  -----------------------------------------
+  Overall Compile Time:                2.15
+  Overall Compile Wall Clock Time:     3.24
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.15  TNS: 5.40  Number of Violating Paths: 61
+
+  --------------------------------------------------------------------
+
+
+1

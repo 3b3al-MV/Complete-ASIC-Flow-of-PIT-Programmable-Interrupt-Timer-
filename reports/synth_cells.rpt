@@ -1,0 +1,35 @@
+ 
+****************************************
+Report : cell
+Design : pit_top
+Version: V-2023.12
+Date   : Sat Mar 23 15:47:52 2024
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    p - parameterized
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+U3                        INVX0           saed90nm_max_lth
+                                                          5.529600  
+U4                        INVX0           saed90nm_max_lth
+                                                          5.529600  
+U5                        NBUFFX2         saed90nm_max_lth
+                                                          5.529600  
+counter                   pit_count_COUNT_SIZE16          1434.009612
+                                                                    h, n, p
+prescale                  pit_prescale_15_1_0             1259.827213
+                                                                    h, n, p
+regs                      pit_regs_0_16_0_16              1349.222407
+                                                                    h, n, p
+wishbone                  pit_wb_bus_0_16_0               472.780797
+                                                                    h, n, p
+--------------------------------------------------------------------------------
+Total 7 cells                                             4532.428830
+1
